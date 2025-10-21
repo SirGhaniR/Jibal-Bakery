@@ -1,0 +1,5 @@
+header.navbar {
+  background: rgba(47, 28, 18, 0.85);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(233, 175, 140, 0.3);
+}
