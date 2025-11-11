@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Products - Jibal Bakery</title>
+  <link rel="stylesheet" href="public/css/globals.css" />
+  <link rel="stylesheet" href="public/css/style.css" />
+  <link rel="stylesheet" href="public/css/product-nav.css" />
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="navbar">
+    <div class="logo">
+      <a href="/" aria-label="Jibal Bakery Home">
+        <h1>JIBAL BAKERY</h1>
+      </a>
+    </div>
+    <nav class="main-nav" aria-label="Main Navigation">
+      <ul>
+        <li><a href="?page=home">Home</a></li>
+        <li><a href="?page=product" class="active">Product</a></li>
+        <li><a href="?page=about">About Us</a></li>
+        <li><a href="?page=contact">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- MAIN -->
+  <main>
+    <!-- PRODUCT SECTION -->
+    <section class="product-page" aria-labelledby="product-page-heading">
+      <div class="product-page-header">
+        <h2 id="product-page-heading">Our Products</h2>
+        <nav
+          class="product-filter-nav"
+          aria-label="Product Filter Navigation">
+          <div class="filter-controls">
+            <button class="filter-btn active" data-filter="all">
+              All Products
+            </button>
+            <button class="filter-btn" data-filter="bread">Bread</button>
+            <button class="filter-btn" data-filter="cookies">Cookies</button>
+            <button class="filter-btn" data-filter="cakes">Cakes</button>
+            <button class="filter-btn" data-filter="pastry">Pastry</button>
+          </div>
+          <div class="sort-controls">
+            <label for="sort-select">Sort by:</label>
+            <select id="sort-select" class="sort-select">
+              <option value="name">Name</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="popular">Most Popular</option>
+            </select>
+          </div>
+        </nav>
+      </div>
+
+      <div class="product-grid">
+        <div class="product-card">
+          <img src="public/img/croissant.jpg" alt="Buttery French croissants" />
+          <div class="product-info">
+            <h3>Croissant</h3>
+            <p class="price">Rp45K</p>
+            <button class="add-btn" aria-label="Add Croissant to cart">
+              Add
+            </button>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="public/img/sourdough_boule.jpg" alt="Artisan sourdough boule" />
+          <div class="product-info">
+            <h3>Sourdough Boule</h3>
+            <p class="price">Rp65K</p>
+            <button class="add-btn" aria-label="Add Sourdough Boule to cart">
+              Add
+            </button>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="public/img/cookies.jpg" alt="Double chocolate chip cookies" />
+          <div class="product-info">
+            <h3>Double Chocolate Cookies</h3>
+            <p class="price">Rp85K</p>
+            <button
+              class="add-btn"
+              aria-label="Add Double Chocolate Cookies to cart">
+              Add
+            </button>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="public/img/cakes.jpg" alt="Rich chocolate fudge cake" />
+          <div class="product-info">
+            <h3>Chocolate Fudge Cake</h3>
+            <p class="price">Rp150K</p>
+            <button
+              class="add-btn"
+              aria-label="Add Chocolate Fudge Cake to cart">
+              Add
+            </button>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="public/img/raspberry_danish.jpg" alt="Raspberry Danish pastry" />
+          <div class="product-info">
+            <h3>Raspberry Danish</h3>
+            <p class="price">Rp55K</p>
+            <button class="add-btn" aria-label="Add Raspberry Danish to cart">
+              Add
+            </button>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="public/img/french_baguette.jpg" alt="Classic French baguette" />
+          <div class="product-info">
+            <h3>French Baguette</h3>
+            <p class="price">Rp40K</p>
+            <button class="add-btn" aria-label="Add French Baguette to cart">
+              Add
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- PAGINATION -->
+      <nav class="pagination-nav" aria-label="Product Pagination">
+        <div class="pagination-info">
+          Showing <span class="current-page">1</span> to
+          <span class="items-per-page">6</span> of
+          <span class="total-items">12</span> products
+        </div>
+        <div class="pagination-controls">
+          <button
+            class="pagination-btn pagination-prev"
+            disabled
+            aria-label="Previous page">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2">
+              <path d="M15 18l-6-6 6-6" />
+            </svg>
+            Previous
+          </button>
+
+          <div class="pagination-numbers">
+            <button
+              class="pagination-btn pagination-number active"
+              data-page="1">
+              1
+            </button>
+            <button class="pagination-btn pagination-number" data-page="2">
+              2
+            </button>
+          </div>
+
+          <button
+            class="pagination-btn pagination-next"
+            aria-label="Next page">
+            Next
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2">
+              <path d="M9 18l6-6-6-6" />
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 Jibal Bakery. All rights reserved.</p>
+  </footer>
+</body>
+
+</html>
