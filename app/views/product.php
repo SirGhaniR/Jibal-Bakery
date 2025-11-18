@@ -38,147 +38,96 @@
           class="product-filter-nav"
           aria-label="Product Filter Navigation">
           <div class="filter-controls">
-            <button class="filter-btn active" data-filter="all">
+            <a href="?page=product&filter=all&sort=<?php echo $sort; ?>" class="filter-btn <?php echo $filter === 'all' ? 'active' : ''; ?>">
               All Products
-            </button>
-            <button class="filter-btn" data-filter="bread">Bread</button>
-            <button class="filter-btn" data-filter="cookies">Cookies</button>
-            <button class="filter-btn" data-filter="cakes">Cakes</button>
-            <button class="filter-btn" data-filter="pastry">Pastry</button>
+            </a>
+            <a href="?page=product&filter=bread&sort=<?php echo $sort; ?>" class="filter-btn <?php echo $filter === 'bread' ? 'active' : ''; ?>">Bread</a>
+            <a href="?page=product&filter=cookies&sort=<?php echo $sort; ?>" class="filter-btn <?php echo $filter === 'cookies' ? 'active' : ''; ?>">Cookies</a>
+            <a href="?page=product&filter=cakes&sort=<?php echo $sort; ?>" class="filter-btn <?php echo $filter === 'cakes' ? 'active' : ''; ?>">Cakes</a>
+            <a href="?page=product&filter=pastry&sort=<?php echo $sort; ?>" class="filter-btn <?php echo $filter === 'pastry' ? 'active' : ''; ?>">Pastry</a>
           </div>
           <div class="sort-controls">
-            <label for="sort-select">Sort by:</label>
-            <select id="sort-select" class="sort-select">
-              <option value="name">Name</option>
-              <option value="price-low">Price: Low to High</option>
-              <option value="price-high">Price: High to Low</option>
-              <option value="popular">Most Popular</option>
-            </select>
+            <form method="get" action="?page=product">
+              <input type="hidden" name="page" value="product">
+              <input type="hidden" name="filter" value="<?php echo $filter; ?>">
+              <label for="sort-select">Sort by:</label>
+              <select id="sort-select" name="sort" class="sort-select" onchange="this.form.submit()">
+                <option value="name" <?php echo $sort === 'name' ? 'selected' : ''; ?>>Name</option>
+                <option value="price-low" <?php echo $sort === 'price-low' ? 'selected' : ''; ?>>Price: Low to High</option>
+                <option value="price-high" <?php echo $sort === 'price-high' ? 'selected' : ''; ?>>Price: High to Low</option>
+                <option value="popular" <?php echo $sort === 'popular' ? 'selected' : ''; ?>>Most Popular</option>
+              </select>
+            </form>
           </div>
         </nav>
       </div>
 
       <div class="product-grid">
-        <div class="product-card">
-          <img src="public/img/croissant.jpg" alt="Buttery French croissants" />
-          <div class="product-info">
-            <h3>Croissant</h3>
-            <p class="price">Rp45K</p>
-            <button class="add-btn" aria-label="Add Croissant to cart">
-              Add
-            </button>
+        <?php foreach ($products as $product): ?>
+          <div class="product-card">
+            <img src="<?php echo htmlspecialchars($product['image']); ?>" alt="<?php echo htmlspecialchars($product['description']); ?>" />
+            <div class="product-info">
+              <h3><?php echo htmlspecialchars($product['name']); ?></h3>
+              <p class="price">Rp<?php echo number_format($product['price'], 0, ',', '.'); ?>K</p>
+              <form method="post" action="?page=product&action=addToCart">
+                <input type="hidden" name="product_id" value="<?php echo $product['id']; ?>">
+                <input type="hidden" name="quantity" value="1">
+                <button type="submit" class="add-btn" aria-label="Add <?php echo htmlspecialchars($product['name']); ?> to cart">
+                  Add
+                </button>
+              </form>
+            </div>
           </div>
-        </div>
-
-        <div class="product-card">
-          <img src="public/img/sourdough_boule.jpg" alt="Artisan sourdough boule" />
-          <div class="product-info">
-            <h3>Sourdough Boule</h3>
-            <p class="price">Rp65K</p>
-            <button class="add-btn" aria-label="Add Sourdough Boule to cart">
-              Add
-            </button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <img src="public/img/cookies.jpg" alt="Double chocolate chip cookies" />
-          <div class="product-info">
-            <h3>Double Chocolate Cookies</h3>
-            <p class="price">Rp85K</p>
-            <button
-              class="add-btn"
-              aria-label="Add Double Chocolate Cookies to cart">
-              Add
-            </button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <img src="public/img/cakes.jpg" alt="Rich chocolate fudge cake" />
-          <div class="product-info">
-            <h3>Chocolate Fudge Cake</h3>
-            <p class="price">Rp150K</p>
-            <button
-              class="add-btn"
-              aria-label="Add Chocolate Fudge Cake to cart">
-              Add
-            </button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <img src="public/img/raspberry_danish.jpg" alt="Raspberry Danish pastry" />
-          <div class="product-info">
-            <h3>Raspberry Danish</h3>
-            <p class="price">Rp55K</p>
-            <button class="add-btn" aria-label="Add Raspberry Danish to cart">
-              Add
-            </button>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <img src="public/img/french_baguette.jpg" alt="Classic French baguette" />
-          <div class="product-info">
-            <h3>French Baguette</h3>
-            <p class="price">Rp40K</p>
-            <button class="add-btn" aria-label="Add French Baguette to cart">
-              Add
-            </button>
-          </div>
-        </div>
+        <?php endforeach; ?>
       </div>
 
       <!-- PAGINATION -->
       <nav class="pagination-nav" aria-label="Product Pagination">
         <div class="pagination-info">
-          Showing <span class="current-page">1</span> to
-          <span class="items-per-page">6</span> of
-          <span class="total-items">12</span> products
+          Showing <span class="current-page"><?php echo ($currentPage - 1) * 6 + 1; ?></span> to
+          <span class="items-per-page"><?php echo min($currentPage * 6, $totalItems); ?></span> of
+          <span class="total-items"><?php echo $totalItems; ?></span> products
         </div>
         <div class="pagination-controls">
-          <button
-            class="pagination-btn pagination-prev"
-            disabled
-            aria-label="Previous page">
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2">
-              <path d="M15 18l-6-6 6-6" />
-            </svg>
-            Previous
-          </button>
+          <?php if ($currentPage > 1): ?>
+            <a href="?page=product&filter=<?php echo $filter; ?>&sort=<?php echo $sort; ?>&page=<?php echo $currentPage - 1; ?>" class="pagination-btn pagination-prev" aria-label="Previous page">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M15 18l-6-6 6-6" />
+              </svg>
+              Previous
+            </a>
+          <?php else: ?>
+            <span class="pagination-btn pagination-prev" disabled aria-label="Previous page">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M15 18l-6-6 6-6" />
+              </svg>
+              Previous
+            </span>
+          <?php endif; ?>
 
           <div class="pagination-numbers">
-            <button
-              class="pagination-btn pagination-number active"
-              data-page="1">
-              1
-            </button>
-            <button class="pagination-btn pagination-number" data-page="2">
-              2
-            </button>
+            <?php for ($i = 1; $i <= $totalPages; $i++): ?>
+              <a href="?page=product&filter=<?php echo $filter; ?>&sort=<?php echo $sort; ?>&page=<?php echo $i; ?>" class="pagination-btn pagination-number <?php echo $i === $currentPage ? 'active' : ''; ?>" data-page="<?php echo $i; ?>">
+                <?php echo $i; ?>
+              </a>
+            <?php endfor; ?>
           </div>
 
-          <button
-            class="pagination-btn pagination-next"
-            aria-label="Next page">
-            Next
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2">
-              <path d="M9 18l6-6-6-6" />
-            </svg>
-          </button>
+          <?php if ($currentPage < $totalPages): ?>
+            <a href="?page=product&filter=<?php echo $filter; ?>&sort=<?php echo $sort; ?>&page=<?php echo $currentPage + 1; ?>" class="pagination-btn pagination-next" aria-label="Next page">
+              Next
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18l6-6-6-6" />
+              </svg>
+            </a>
+          <?php else: ?>
+            <span class="pagination-btn pagination-next" disabled aria-label="Next page">
+              Next
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18l6-6-6-6" />
+              </svg>
+            </span>
+          <?php endif; ?>
         </div>
       </nav>
     </section>

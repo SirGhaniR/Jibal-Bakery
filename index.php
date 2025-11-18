@@ -1,4 +1,5 @@
 <?php
+session_start();
 // Front Controller
 require_once 'app/controllers/BaseController.php';
 require_once 'app/controllers/HomeController.php';
@@ -7,6 +8,7 @@ require_once 'app/controllers/AboutController.php';
 require_once 'app/controllers/ContactController.php';
 
 $page = isset($_GET['page']) ? $_GET['page'] : 'home';
+$action = isset($_GET['action']) ? $_GET['action'] : 'index';
 
 switch ($page) {
   case 'home':
@@ -26,4 +28,8 @@ switch ($page) {
     break;
 }
 
-$controller->index();
+if (method_exists($controller, $action)) {
+  $controller->$action();
+} else {
+  $controller->index();
+}
