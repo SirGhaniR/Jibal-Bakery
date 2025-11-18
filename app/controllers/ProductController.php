@@ -12,7 +12,7 @@ class ProductController extends BaseController
 
     $filter = isset($_GET['filter']) ? $_GET['filter'] : 'all';
     $sort = isset($_GET['sort']) ? $_GET['sort'] : 'name';
-    $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+    $page = isset($_GET['page_num']) ? max(1, (int)$_GET['page_num']) : 1;
 
     $products = $productModel->getAll($filter, $sort, $page);
     $totalCount = $productModel->getTotalCount($filter);

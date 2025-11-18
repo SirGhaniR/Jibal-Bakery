@@ -6,7 +6,7 @@ class Database
 
   private function __construct()
   {
-    $this->pdo = new PDO('mysql:host=localhost;dbname=jibal_bakery;charset=utf8', 'root', '');
+    $this->pdo = new PDO('mysql:host=localhost;dbname=jibal_bakery;charset=utf8;unix_socket=/run/mysqld/mysqld.sock', 'root', 'SirGhani_090903');
     $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $this->createTables();
   }

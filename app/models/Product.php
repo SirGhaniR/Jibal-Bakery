@@ -20,10 +20,14 @@ class Product
     $stmt = $this->db->prepare($sql);
 
     if ($filter !== 'all') {
-      $stmt->execute([$filter, $perPage, $offset]);
+      $stmt->bindValue(1, $filter, PDO::PARAM_STR);
+      $stmt->bindValue(2, $perPage, PDO::PARAM_INT);
+      $stmt->bindValue(3, $offset, PDO::PARAM_INT);
     } else {
-      $stmt->execute([$perPage, $offset]);
+      $stmt->bindValue(1, $perPage, PDO::PARAM_INT);
+      $stmt->bindValue(2, $offset, PDO::PARAM_INT);
     }
+    $stmt->execute();
 
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
   }

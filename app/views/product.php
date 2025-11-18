@@ -68,7 +68,7 @@
             <img src="<?php echo htmlspecialchars($product['image']); ?>" alt="<?php echo htmlspecialchars($product['description']); ?>" />
             <div class="product-info">
               <h3><?php echo htmlspecialchars($product['name']); ?></h3>
-              <p class="price">Rp<?php echo number_format($product['price'], 0, ',', '.'); ?>K</p>
+              <p class="price">Rp<?php echo number_format($product['price'], 0, ',', '.'); ?></p>
               <form method="post" action="?page=product&action=addToCart">
                 <input type="hidden" name="product_id" value="<?php echo $product['id']; ?>">
                 <input type="hidden" name="quantity" value="1">
@@ -90,7 +90,7 @@
         </div>
         <div class="pagination-controls">
           <?php if ($currentPage > 1): ?>
-            <a href="?page=product&filter=<?php echo $filter; ?>&sort=<?php echo $sort; ?>&page=<?php echo $currentPage - 1; ?>" class="pagination-btn pagination-prev" aria-label="Previous page">
+            <a href="?page=product&filter=<?php echo $filter; ?>&sort=<?php echo $sort; ?>&page_num=<?php echo $currentPage - 1; ?>" class="pagination-btn pagination-prev" aria-label="Previous page">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M15 18l-6-6 6-6" />
               </svg>
@@ -107,14 +107,14 @@
 
           <div class="pagination-numbers">
             <?php for ($i = 1; $i <= $totalPages; $i++): ?>
-              <a href="?page=product&filter=<?php echo $filter; ?>&sort=<?php echo $sort; ?>&page=<?php echo $i; ?>" class="pagination-btn pagination-number <?php echo $i === $currentPage ? 'active' : ''; ?>" data-page="<?php echo $i; ?>">
+              <a href="?page=product&filter=<?php echo $filter; ?>&sort=<?php echo $sort; ?>&page_num=<?php echo $i; ?>" class="pagination-btn pagination-number <?php echo $i === $currentPage ? 'active' : ''; ?>" data-page="<?php echo $i; ?>">
                 <?php echo $i; ?>
               </a>
             <?php endfor; ?>
           </div>
 
           <?php if ($currentPage < $totalPages): ?>
-            <a href="?page=product&filter=<?php echo $filter; ?>&sort=<?php echo $sort; ?>&page=<?php echo $currentPage + 1; ?>" class="pagination-btn pagination-next" aria-label="Next page">
+            <a href="?page=product&filter=<?php echo $filter; ?>&sort=<?php echo $sort; ?>&page_num=<?php echo $currentPage + 1; ?>" class="pagination-btn pagination-next" aria-label="Next page">
               Next
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M9 18l6-6-6-6" />
