@@ -73,19 +73,19 @@
       <div class="team-grid">
         <div class="team-member">
           <img src="foto portrait kita" alt="Baker portrait" class="team-photo">
-          <h3>Alex Chen</h3>
+          <h3>Raihan Ghani Fausta</h3>
           <p class="team-role">Head Baker & Founder</p>
-          <p class="team-bio">Specializes in sourdough and traditional breads. 10+ years of baking experience.</p>
+          <p class="team-bio">Specializes in sourdough and traditional breads.</p>
         </div>
         <div class="team-member">
           <img src="foto portrait kita" alt="Baker portrait" class="team-photo">
-          <h3>Maria Rodriguez</h3>
+          <h3>Rifqi Dzaki Makarim</h3>
           <p class="team-role">Pastry Chef & Co-Founder</p>
-          <p class="team-bio">Master of cakes, cookies, and all things sweet. Former pastry chef at top restaurants.</p>
+          <p class="team-bio">Master of cakes, cookies, and all things sweet.</p>
         </div>
         <div class="team-member">
           <img src="foto portrait kita" alt="Baker portrait" class="team-photo">
-          <h3>James Wilson</h3>
+          <h3>Muhamad Jibal M. J.</h3>
           <p class="team-role">Operations & Co-Founder</p>
           <p class="team-bio">Handles the business side while ensuring every customer leaves with a smile.</p>
         </div>
