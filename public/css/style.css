@@ -47,8 +47,7 @@ header.navbar {
   position: relative;
   width: 100%;
   height: 100vh;
-  background: url("https://c.animaapp.com/mgg6h7qmhMpph6/img/hero.png")
-    center/cover no-repeat;
+  background: url("/public/img/hero.png") center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -527,6 +526,393 @@ header.navbar {
   color: #f3e9df;
 }
 
+/* ========== FEATURES SECTION ========== */
+.features-section {
+  background: #fff;
+  padding: 100px 60px;
+  text-align: center;
+}
+
+.features-section h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 32px;
+  color: #2f1c12;
+  margin-bottom: 60px;
+  letter-spacing: 1px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feature-card {
+  background: #fffaf6;
+  padding: 40px 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(184, 116, 76, 0.1);
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  border-color: rgba(184, 116, 76, 0.2);
+}
+
+.feature-icon {
+  font-size: 48px;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.feature-card h3 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  color: #2f1c12;
+  margin-bottom: 16px;
+}
+
+.feature-card p {
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  color: #5d4037;
+  line-height: 1.6;
+}
+
+/* ========== TESTIMONIALS SECTION ========== */
+.testimonials-section {
+  background: linear-gradient(to bottom, #fef3e7 0%, #fffaf6 100%);
+  padding: 100px 60px;
+  text-align: center;
+}
+
+.testimonials-section h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 32px;
+  color: #2f1c12;
+  margin-bottom: 60px;
+  letter-spacing: 1px;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.testimonial-card {
+  background: #fff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(184, 116, 76, 0.1);
+  transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  border-color: rgba(184, 116, 76, 0.2);
+}
+
+.testimonial-content {
+  margin-bottom: 30px;
+}
+
+.testimonial-content p {
+  font-family: "Poppins", sans-serif;
+  font-style: italic;
+  font-size: 16px;
+  color: #5d4037;
+  line-height: 1.6;
+  position: relative;
+}
+
+.testimonial-content p::before {
+  content: '"';
+  font-size: 60px;
+  color: #e9af8c;
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  font-family: "Playfair Display", serif;
+}
+
+.testimonial-content p::after {
+  content: '"';
+  font-size: 60px;
+  color: #e9af8c;
+  position: absolute;
+  bottom: -40px;
+  right: -20px;
+  font-family: "Playfair Display", serif;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.testimonial-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #e9af8c;
+}
+
+.testimonial-info h4 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: #2f1c12;
+  margin-bottom: 4px;
+}
+
+.testimonial-info span {
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  color: #8b6f47;
+}
+
+/* ========== CALL TO ACTION SECTION ========== */
+.cta-section {
+  background: linear-gradient(135deg, #b8744c 0%, #a66540 100%);
+  padding: 100px 60px;
+  text-align: center;
+  color: #fff;
+}
+
+.cta-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.cta-content h2 {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: 36px;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.cta-content p {
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  margin-bottom: 40px;
+  opacity: 0.9;
+}
+
+.cta-section .cta-button {
+  background: #fff;
+  color: #b8744c;
+  border-color: #fff;
+  font-size: 20px;
+  padding: 16px 50px;
+}
+
+.cta-section .cta-button:hover {
+  background: transparent;
+  color: #fff;
+  border-color: #fff;
+}
+
+/* ========== STORY SECTION ========== */
+.story-section {
+  background: linear-gradient(to bottom, #fef3e7 0%, #fffaf6 100%);
+  padding: 100px 60px;
+  text-align: center;
+}
+
+.story-section h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 32px;
+  color: #2f1c12;
+  margin-bottom: 60px;
+  letter-spacing: 1px;
+}
+
+.story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.story-text {
+  text-align: left;
+}
+
+.story-text h3 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  color: #2f1c12;
+  margin-bottom: 20px;
+}
+
+.story-text p {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  color: #5d4037;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.story-image img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* ========== TEAM SECTION ========== */
+.team-section {
+  background: #fff;
+  padding: 100px 60px;
+  text-align: center;
+}
+
+.team-section h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 32px;
+  color: #2f1c12;
+  margin-bottom: 60px;
+  letter-spacing: 1px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.team-member {
+  background: #fffaf6;
+  padding: 40px 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(184, 116, 76, 0.1);
+  transition: all 0.3s ease;
+}
+
+.team-member:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  border-color: rgba(184, 116, 76, 0.2);
+}
+
+.team-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 20px;
+  display: block;
+  border: 4px solid #e9af8c;
+}
+
+.team-member h3 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  color: #2f1c12;
+  margin-bottom: 8px;
+}
+
+.team-role {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: #b8744c;
+  margin-bottom: 16px;
+}
+
+.team-bio {
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  color: #5d4037;
+  line-height: 1.6;
+}
+
+/* ========== MISSION SECTION ========== */
+.mission-section {
+  background: linear-gradient(to bottom, #fffaf6 0%, #fef3e7 100%);
+  padding: 100px 60px;
+  text-align: center;
+}
+
+.mission-section h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 32px;
+  color: #2f1c12;
+  margin-bottom: 60px;
+  letter-spacing: 1px;
+}
+
+.mission-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.mission-card {
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(184, 116, 76, 0.1);
+  transition: all 0.3s ease;
+}
+
+.mission-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  border-color: rgba(184, 116, 76, 0.2);
+}
+
+.mission-icon {
+  font-size: 48px;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.mission-card h3 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  color: #2f1c12;
+  margin-bottom: 16px;
+}
+
+.mission-card p {
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  color: #5d4037;
+  line-height: 1.6;
+}
+
 /* ========== FOOTER ========== */
 footer {
   background: #2f1c12;
@@ -659,5 +1045,194 @@ footer {
 
   .product-page {
     padding: 80px 40px;
+  }
+
+  .features-section {
+    padding: 80px 20px;
+  }
+
+  .features-section h2 {
+    font-size: 28px;
+    margin-bottom: 40px;
+  }
+
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .feature-card {
+    padding: 30px 16px;
+  }
+
+  .feature-icon {
+    font-size: 36px;
+    margin-bottom: 16px;
+  }
+
+  .feature-card h3 {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+
+  .feature-card p {
+    font-size: 13px;
+  }
+
+  .testimonials-section {
+    padding: 80px 20px;
+  }
+
+  .testimonials-section h2 {
+    font-size: 28px;
+    margin-bottom: 40px;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .testimonial-card {
+    padding: 30px 20px;
+  }
+
+  .testimonial-content p {
+    font-size: 15px;
+  }
+
+  .testimonial-content p::before,
+  .testimonial-content p::after {
+    font-size: 40px;
+  }
+
+  .testimonial-author {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+
+  .testimonial-info h4 {
+    font-size: 15px;
+  }
+
+  .testimonial-info span {
+    font-size: 13px;
+  }
+
+  .cta-section {
+    padding: 80px 20px;
+  }
+
+  .cta-content h2 {
+    font-size: 28px;
+  }
+
+  .cta-content p {
+    font-size: 16px;
+  }
+
+  .cta-section .cta-button {
+    font-size: 18px;
+    padding: 14px 40px;
+  }
+
+  .story-section {
+    padding: 80px 20px;
+  }
+
+  .story-section h2 {
+    font-size: 28px;
+    margin-bottom: 40px;
+  }
+
+  .story-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .story-text {
+    text-align: center;
+  }
+
+  .story-text h3 {
+    font-size: 22px;
+    margin-bottom: 16px;
+  }
+
+  .story-text p {
+    font-size: 15px;
+  }
+
+  .story-image img {
+    height: 250px;
+  }
+
+  .team-section {
+    padding: 80px 20px;
+  }
+
+  .team-section h2 {
+    font-size: 28px;
+    margin-bottom: 40px;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .team-member {
+    padding: 30px 20px;
+  }
+
+  .team-photo {
+    width: 100px;
+    height: 100px;
+  }
+
+  .team-member h3 {
+    font-size: 18px;
+  }
+
+  .team-role {
+    font-size: 13px;
+  }
+
+  .team-bio {
+    font-size: 13px;
+  }
+
+  .mission-section {
+    padding: 80px 20px;
+  }
+
+  .mission-section h2 {
+    font-size: 28px;
+    margin-bottom: 40px;
+  }
+
+  .mission-cards {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .mission-card {
+    padding: 30px 20px;
+  }
+
+  .mission-icon {
+    font-size: 36px;
+    margin-bottom: 16px;
+  }
+
+  .mission-card h3 {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+
+  .mission-card p {
+    font-size: 13px;
   }
 }
